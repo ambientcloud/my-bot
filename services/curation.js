@@ -61,8 +61,8 @@ module.exports = class Curation {
                 "CURATION_OTHER_STYLE"
               ),
               Response.genPostbackButton(
-                i18n.__("curation.sales"),
-                "CARE_SALES"
+                i18n.__("curation.agent"),
+                "CARE_AGENT"
               )
             ]
           )
@@ -72,18 +72,18 @@ module.exports = class Curation {
       case "CURATION":
         response = Response.genQuickReply(i18n.__("curation.prompt"), [
           {
-            title: i18n.__("curation.me"),
-            payload: "CURATION_FOR_ME"
+            title: i18n.__("curation.cake"),
+            payload: "CURATION_CAKE"
           },
           {
-            title: i18n.__("curation.someone"),
-            payload: "CURATION_SOMEONE_ELSE"
+            title: i18n.__("curation.pastries"),
+            payload: "CURATION_PASTRIES"
           }
         ]);
         break;
 
-      case "CURATION_FOR_ME":
-      case "CURATION_SOMEONE_ELSE":
+      case "CURATION_CAKE":
+      case "CURATION_PASTRIES":
         response = Response.genQuickReply(i18n.__("curation.occasion"), [
           {
             title: i18n.__("curation.work"),
@@ -98,8 +98,8 @@ module.exports = class Curation {
             payload: "CURATION_OCASION_PARTY"
           },
           {
-            title: i18n.__("curation.sales"),
-            payload: "CARE_SALES"
+            title: i18n.__("curation.agent"),
+            payload: "CARE_AGENT"
           }
         ]);
         break;
@@ -213,7 +213,7 @@ module.exports = class Curation {
 
     if (budget === "50") {
       buttons.push(
-        Response.genPostbackButton(i18n.__("curation.sales"), "CARE_SALES")
+        Response.genPostbackButton(i18n.__("curation.agent"), "CARE_AGENT")
       );
     }
 
